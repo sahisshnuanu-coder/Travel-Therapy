@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f4e7d0">
+  <title>Passport Please! — Travel Planner</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Nunito:wght@400;500;600;700;800;900&family=Patrick+Hand&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="paper-grain" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#home">
+      <span class="brand-stamp">✈</span>
+      <span>passport<span class="brand-pop">please!</span></span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="#plan">Plan a trip</a>
+      <a href="#verify">Verify</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#tips">Travel tips</a>
+    </nav>
+
+    <button class="top-cta" data-scroll="#plan">
+      Let's go <span>↗</span>
+    </button>
+
+    <button class="menu-toggle" aria-label="Toggle navigation"
+      aria-expanded="false">☰</button>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero section-wrap" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow">
+          <span class="live-dot"></span>
+          YOUR NEXT BIG LITTLE ADVENTURE
+        </div>
+
+        <h1>
+          Make a plan.<br>
+          <span>Catch a flight.</span><br>
+          Collect stories.
+        </h1>
+
+        <p class="hero-lede">
+          A delightfully organised travel planner for people who pack
+          their whole personality into a carry-on.
+        </p>
+
+        <div class="hero-actions">
+          <button class="button button-primary" data-scroll="#plan">
+            Plan my trip <span>↗</span>
+          </button>
+
+          <button class="button button-quiet" data-scroll="#tips">
+            <span class="play-icon">▶</span>
+            Meet your travel buddy
+          </button>
+        </div>
+
+        <div class="hero-footnote">
+          <span class="scribble-star">✳</span>
+          Less “where's the booking?” More “remember that sunset?”
+        </div>
+      </div>
+
+      <div class="hero-art">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+
+        <span class="float-tag tag-one">ADVENTURE AWAITS</span>
+        <span class="float-tag tag-two">✦ 100% VACATION MODE</span>
+
+        <div class="sunburst">✹</div>
+
+        <div class="ticket ticket-back">
+          <span>BOARDING PASS</span>
+          <strong>ANYWHERE</strong>
+          <small>ONE WAY TO FUN</small>
+        </div>
+
+        <!-- MR. PASS -->
+        <div class="hero-mascot mascot-scene">
+          <div class="mascot" data-pose="hero" id="heroMascot"
+            aria-label="Mr. Pass, a goofy passport mascot" role="img">
+
+            <div class="passport-topline">
+              <span>✦</span>
+              <span>TRAVEL BUDDY</span>
+              <span>✦</span>
+            </div>
+
+            <div class="passport-face">
+              <i class="eye eye-left"></i>
+              <i class="eye eye-right"></i>
+              <span class="brow brow-left"></span>
+              <span class="brow brow-right"></span>
+              <span class="mustache">〰</span>
+              <span class="mouth"></span>
+            </div>
+
+            <div class="passport-cover">
+              <span>✦</span>
+              <b>PASSPORT</b>
+              <span class="globe">◎</span>
+            </div>
+
+            <div class="mascot-arm arm-left"></div>
+            <div class="mascot-arm arm-right"></div>
+            <div class="mascot-leg leg-left"></div>
+            <div class="mascot-leg leg-right"></div>
+            <div class="mascot-shoe shoe-left"></div>
+            <div class="mascot-shoe shoe-right"></div>
+          </div>
+
+          <div class="speech-bubble" id="mascotSpeech">
+            HI! I'M MR. PASS.<br>
+            WHERE ARE WE GOING?!
+          </div>
+        </div>
+
+        <div class="mini-cloud cloud-one">☁</div>
+        <div class="mini-cloud cloud-two">☁</div>
+        <div class="sparkle sparkle-one">✦</div>
+        <div class="sparkle sparkle-two">✧</div>
+      </div>
+
+      <div class="hero-bottom">
+        <span>01 / DREAM IT</span>
+        <span class="bottom-line"></span>
+        <span>SCROLL TO START ↓</span>
+      </div>
+    </section>
+
+    <section class="intro-strip">
+      <span>✳ BIG PLANS, TINY DETAILS</span>
+      <span>✈ BUILT FOR CURIOUS HUMANS</span>
+      <span>✳ MR. PASS APPROVES (PROBABLY)</span>
+    </section>
+
+    <!-- TRIP PLANNER -->
+    <section class="section-wrap planner-section" id="plan">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">01 — DREAM IT UP</div>
+          <h2>Where to, <em>chief?</em></h2>
+        </div>
+        <p>
+          Tell us the basics. Mr. Pass will try not to pack
+          14 pairs of socks this time.
+        </p>
+      </div>
+
+      <div class="planner-grid">
+        <form id="tripForm" class="panel trip-form">
+          <div class="panel-top">
+            <span class="panel-kicker">YOUR TRIP BRIEF</span>
+            <span class="step-pill">STEP 01 / 03</span>
+          </div>
+
+          <label for="destination">Destination <span>✦</span></label>
+          <input id="destination" name="destination" type="text"
+            placeholder="e.g. Kyoto, Japan" required maxlength="70">
+
+          <div class="form-row">
+            <div>
+              <label for="startDate">Departure</label>
+              <input id="startDate" name="startDate" type="date" required>
+            </div>
+            <div>
+              <label for="endDate">Return</label>
+              <input id="endDate" name="endDate" type="date" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div>
+              <label for="budget">Budget (₹)</label>
+              <select id="budget" name="budget">
+                <option value="Budget-friendly">Budget-friendly</option>
+                <option value="Comfortable" selected>Comfortable</option>
+                <option value="Treat yourself">Treat yourself</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="travelStyle">Your vibe</label>
+              <select id="travelStyle" name="travelStyle">
+                <option>Culture & cafés</option>
+                <option>Nature mode</option>
+                <option>Foodie mission</option>
+                <option>Adventure chaos</option>
+                <option>Slow & sunny</option>
+                <option>Bit of everything</option>
+              </select>
+            </div>
+          </div>
+
+          <label>Who's coming along?</label>
+          <div class="guest-picker">
+            <button type="button" class="guest-change" id="guestMinus"
+              aria-label="Remove traveller">−</button>
+            <span><strong id="guestCount">2</strong> travellers</span>
+            <button type="button" class="guest-change" id="guestPlus"
+              aria-label="Add traveller">+</button>
+          </div>
+
+          <button class="button button-primary submit-button" type="submit">
+            Build my itinerary <span>↗</span>
+          </button>
+
+          <p class="fine-print">
+            No account needed. Your trip stays in this browser unless you export it.
+          </p>
+        </form>
+
+        <div class="planner-side">
+          <div class="postcard">
+            <div class="postcard-top">
+              <span>POSTCARD FROM FUTURE YOU</span>
+              <span>№ 001</span>
+            </div>
+
+            <div class="postcard-illustration">
+              <div class="postcard-sun"></div>
+              <div class="mountain mountain-a"></div>
+              <div class="mountain mountain-b"></div>
+              <div class="postcard-water"></div>
+              <span class="postcard-plane">✈</span>
+            </div>
+
+            <div class="postcard-caption">
+              <span>Wish you were here.</span>
+              <span class="stamp">APPROVED<br>BY MR. PASS</span>
+            </div>
+          </div>
+
+          <div class="mascot-note">
+            <div class="tiny-mascot" data-pose="thinking">
+              <span class="tiny-eyes">• •</span>
+              <span class="tiny-mustache">〰</span>
+            </div>
+            <div>
+              <strong>Mr. Pass says:</strong>
+              <p id="plannerTip">
+                A rough plan is better than 37 open tabs. Let's do this.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VERIFICATION -->
+    <section class="verify-section" id="verify">
+      <div class="section-wrap verify-grid">
+        <div class="verify-copy">
+          <div class="eyebrow">02 — DOUBLE-CHECK THE DETAILS</div>
+          <h2>Trust, but<br><em>verify.</em></h2>
+
+          <p>
+            Drop in your booking notes, confirmation numbers, or the
+            “I swear I booked it” details. Keep the important stuff in one place.
+          </p>
+
+          <div class="verify-mascot-wrap">
+            <div class="mascot small-mascot" data-pose="detective">
+              <div class="passport-topline">
+                <span>✦</span><span>TRAVEL BUDDY</span><span>✦</span>
+              </div>
+              <div class="passport-face">
+                <i class="eye eye-left"></i>
+                <i class="eye eye-right"></i>
+                <span class="brow brow-left"></span>
+                <span class="brow brow-right"></span>
+                <span class="mustache">〰</span>
+                <span class="mouth"></span>
+              </div>
+              <div class="passport-cover">
+                <span>✦</span><b>PASSPORT</b><span class="globe">◎</span>
+              </div>
+              <div class="mascot-leg leg-left"></div>
+              <div class="mascot-leg leg-right"></div>
+              <span class="detective-glass">⌕</span>
+            </div>
+
+            <div class="speech-bubble verify-bubble">
+              HMM. DOES THIS<br>BOOKING LOOK SUS?
+            </div>
+          </div>
+        </div>
+
+        <div class="panel verify-panel">
+          <div class="panel-top">
+            <span class="panel-kicker">TRIP NOTES & CONFIRMATIONS</span>
+            <span class="file-icon">▤</span>
+          </div>
+
+          <label for="notes">Your notes</label>
+          <textarea id="notes" rows="5"
+            placeholder="Hotel confirmation, flight number, museum tickets…"></textarea>
+
+          <div class="verify-actions">
+            <button class="button button-primary" id="saveNotes">
+              Save notes <span>✓</span>
+            </button>
+            <button class="button button-outline" id="mapsButton">
+              Open Google Maps ↗
+            </button>
+          </div>
+
+          <p class="inline-status" id="notesStatus" aria-live="polite">
+            Your notes are saved locally on this device.
+          </p>
+
+          <div class="checklist">
+            <div class="checklist-head">
+              <strong>Pre-flight sanity check</strong>
+              <span id="checkProgress">0 / 4</span>
+            </div>
+
+            <label class="check-item">
+              <input type="checkbox">
+              <span class="fake-check"></span>
+              Passport validity checked
+            </label>
+            <label class="check-item">
+              <input type="checkbox">
+              <span class="fake-check"></span>
+              Tickets & accommodation confirmed
+            </label>
+            <label class="check-item">
+              <input type="checkbox">
+              <span class="fake-check"></span>
+              Travel insurance sorted
+            </label>
+            <label class="check-item">
+              <input type="checkbox">
+              <span class="fake-check"></span>
+              Offline copies downloaded
+            </label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ITINERARY -->
+    <section class="section-wrap schedule-section" id="schedule">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">03 — MAKE IT HAPPEN</div>
+          <h2>A plan with <em>wiggle room.</em></h2>
+        </div>
+        <p>
+          Give the day a shape, not a prison sentence.
+          Add stops and shuffle the order as you go.
+        </p>
+      </div>
+
+      <div class="schedule-toolbar">
+        <div class="day-tabs" id="dayTabs">
+          <button class="day-tab active" data-day="1">DAY 01</button>
+          <button class="day-tab" data-day="2">DAY 02</button>
+          <button class="day-tab" data-day="3">DAY 03</button>
+        </div>
+        <button class="button button-outline" id="addStop">＋ Add a stop</button>
+      </div>
+
+      <div class="schedule-board">
+        <div class="schedule-labels">
+          <span>TIME</span><span>THE PLAN</span><span>VIBE CHECK</span>
+        </div>
+        <div id="scheduleList" class="schedule-list"></div>
+        <div class="schedule-footer">
+          <span>✳ PLOT TWIST FRIENDLY</span>
+          <span>Drag-free editing. Zero itinerary guilt.</span>
+        </div>
+      </div>
+
+      <div class="schedule-bottom">
+        <div class="schedule-mascot">
+          <div class="tiny-mascot tiny-walking">
+            <span class="tiny-eyes">• •</span>
+            <span class="tiny-mustache">〰</span>
+          </div>
+          <p id="scheduleQuote">“If we're late, we're making an entrance.”</p>
+        </div>
+        <button class="button button-primary" id="exportTrip">
+          Export trip plan ↓
+        </button>
+      </div>
+    </section>
+
+    <!-- TRAVEL TIPS -->
+    <section class="tips-section" id="tips">
+      <div class="section-wrap">
+        <div class="section-heading tips-heading">
+          <div>
+            <div class="eyebrow">04 — FIELD NOTES</div>
+            <h2>Little tips. <em>Big saves.</em></h2>
+          </div>
+          <p>
+            Wisdom collected from people who have definitely missed a train before.
+          </p>
+        </div>
+
+        <div class="tips-grid">
+          <article class="tip-card tip-peach">
+            <span class="tip-number">TIP 001</span>
+            <div class="tip-doodle">▤</div>
+            <h3>Keep a paper trail.</h3>
+            <p>
+              Save offline copies of your bookings, IDs and important addresses.
+              Wi-Fi loves to disappear at the worst moment.
+            </p>
+            <span class="tip-sticker">VERY USEFUL ✓</span>
+          </article>
+
+          <article class="tip-card tip-green">
+            <span class="tip-number">TIP 002</span>
+            <div class="tip-doodle">↗</div>
+            <h3>Money matters.</h3>
+            <p>
+              Check exchange rates and card fees before you go.
+              Keep a backup payment option separate from your wallet.
+            </p>
+            <span class="tip-sticker">FUTURE YOU SAYS THANKS</span>
+          </article>
+
+          <article class="tip-card tip-lilac">
+            <span class="tip-number">TIP 003</span>
+            <div class="tip-doodle">☼</div>
+            <h3>Leave room for magic.</h3>
+            <p>
+              Plan the must-dos, then leave a little blank space for the
+              tiny café you stumble into by accident.
+            </p>
+            <span class="tip-sticker">NO OVERPLANNING</span>
+          </article>
+        </div>
+
+        <div class="tips-bottom">
+          <div class="tips-mascot mascot-scene">
+            <div class="mascot tip-mascot" data-pose="tips">
+              <div class="passport-topline">
+                <span>✦</span><span>TRAVEL BUDDY</span><span>✦</span>
+              </div>
+              <div class="passport-face">
+                <i class="eye eye-left"></i>
+                <i class="eye eye-right"></i>
+                <span class="brow brow-left"></span>
+                <span class="brow brow-right"></span>
+                <span class="mustache">〰</span>
+                <span class="mouth"></span>
+              </div>
+              <div class="passport-cover">
+                <span>✦</span><b>PASSPORT</b><span class="globe">◎</span>
+              </div>
+              <div class="mascot-arm arm-left"></div>
+              <div class="mascot-arm arm-right"></div>
+              <div class="mascot-leg leg-left"></div>
+              <div class="mascot-leg leg-right"></div>
+            </div>
+          </div>
+
+          <div class="tips-signoff">
+            <span class="eyebrow">A FINAL WORD FROM MR. PASS</span>
+            <h3>Be curious.<br>Pack snacks.<br><em>Be a legend.</em></h3>
+          </div>
+
+          <div class="signoff-stamp">BON<br>VOYAGE!</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="brand" href="#home">
+      <span class="brand-stamp">✈</span>
+      <span>passport<span class="brand-pop">please!</span></span>
+    </a>
+    <span>Made for the long way round.</span>
+    <a href="#home">BACK TO TOP ↑</a>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
